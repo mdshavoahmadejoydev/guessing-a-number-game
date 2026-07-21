@@ -1,0 +1,94 @@
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.container {
+  width: 540px;
+  margin: auto;
+  background: rgb(64 68 77);
+  border: 2px solid rgb(41 41 41);
+  border-radius: 20px;
+  box-shadow: inset 0px 0px 12px 3px rgb(177, 176, 176);
+  padding-bottom: 30px;
+}
+
+
+
+
+.playerTwo, .inputTwo, .buttonTwo, .errorTwo {
+  display: none;
+}
+.playerOne, .playerTwo{
+  color: white;
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800px;
+  text-align: center;
+  margin: 25px 0px;
+}
+.inputOne, .inputTwo{
+  width: 250px;
+  height: 50px;
+  font-size: 25px;
+  padding-left: 10px;
+  margin-left: 18%;
+  border-radius: 10px;
+  outline: none;
+}
+.inputOne:hover{
+  box-shadow: 6px 7px 11px -6px rgb(17, 17, 17);
+}
+.inputTwo:hover{
+  box-shadow: 6px 7px 11px -6px rgb(17, 17, 17);
+}
+.inputOne::placeholder{
+  color: rgb(34, 34, 34);
+}
+.inputTwo::placeholder{
+  color: rgb(34, 34, 34);
+}
+.buttonOne, .buttonTwo{
+  padding: 10px 10px;
+  font-size: 25px;
+  color: white;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  border-radius: 10px;
+  background: green;
+}
+.buttonOne:hover{
+  box-shadow: inset 0px 0px 12px 3px rgb(177, 176, 176);
+  transition: 0.2s ease-in-out;
+}
+.buttonOne:active{
+  background: rgb(4, 46, 4);
+  box-shadow: inset 0px 0px 12px 3px transparent;
+  transition: 0.2s ease-in-out;
+}
+.buttonTwo:hover{
+  box-shadow: inset 0px 0px 12px 3px rgb(177, 176, 176);
+  transition: 0.2s ease-in-out;
+}
+.buttonTwo:active{
+  background: rgb(4, 46, 4);
+  box-shadow: inset 0px 0px 12px 3px transparent;
+  transition: 0.2s ease-in-out;
+}
+.errorOne, .errorTwo {
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  margin-left: 18%;
+  margin-top: 25px;
+}
+.chance{
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  margin-left: 18%;
+  margin-bottom: 20px;
+}

@@ -14,13 +14,11 @@ let chance = document.querySelector(".chance")
 
 let count = 3;
 
-chance.innerHTML = `Chance ${count}`;
-
 buttonOne.addEventListener("click", ()=>{
   if(!inputOne.value){
-    errorOne.innerHTML="Enter something"
+    errorOne.innerHTML="Enter something...."
   } else if(isNaN(inputOne.value)){
-    errorOne.innerHTML="Enter a number: "
+    errorOne.innerHTML="Enter a number.... "
   } else if(inputOne.value<1 || inputOne.value>10){
     errorOne.innerHTML="Enter a number 1 to 10"
   } else {
@@ -34,16 +32,16 @@ buttonOne.addEventListener("click", ()=>{
     inputTwo.style.display="inline-block"
     buttonTwo.style.display="inline-block"
     errorTwo.style.display="block"
-    chance.style.display="block"
+    chance.innerHTML = `Chance: ${count}`;
   }
 })
 
 
 buttonTwo.addEventListener("click", ()=>{
   if(!inputTwo.value){
-    errorTwo.innerHTML="Enter something"
+    errorTwo.innerHTML="Enter something...."
   } else if(isNaN(inputTwo.value)){
-    errorTwo.innerHTML="Enter a number: "
+    errorTwo.innerHTML="Enter a number.... "
   } else if(inputTwo.value<1 || inputTwo.value>10){
     errorTwo.innerHTML="Enter a number 1 to 10"
   } else{
@@ -61,4 +59,11 @@ buttonTwo.addEventListener("click", ()=>{
       buttonTwo.style.display="none"
     }
   }
+})
+
+buttonTwo.addEventListener("click", ()=>{
+  inputTwo.value= "";
+})
+buttonOne.addEventListener("click", ()=>{
+  inputOne.value= "";
 })
