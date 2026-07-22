@@ -1,5 +1,8 @@
 
 
+let playerOneContainer = document.querySelector(".playerOneContainer")
+let playerTwoContainer = document.querySelector(".playerTwoContainer")
+
 let playerOne = document.querySelector(".playerOne");
 let inputOne = document.querySelector(".inputOne");
 let buttonOne = document.querySelector(".buttonOne");
@@ -18,14 +21,13 @@ buttonOne.addEventListener("click", ()=>{
   if(!inputOne.value){
     errorOne.innerHTML="Enter something...."
   } else if(isNaN(inputOne.value)){
+    inputOne.value = "";
     errorOne.innerHTML="Enter a number.... "
   } else if(inputOne.value<1 || inputOne.value>10){
-    errorOne.innerHTML="Enter a number 1 to 10"
+    inputOne.value = "";
+    errorOne.innerHTML="Guess between 0 and 10"
   } else {
-    playerOne.style.display="none"
-    inputOne.style.display="none"
-    buttonOne.style.display="none"
-    errorOne.style.display="none"
+    playerOneContainer.style.display="none"
 
 
     playerTwo.style.display="block"
@@ -37,33 +39,34 @@ buttonOne.addEventListener("click", ()=>{
 })
 
 
-buttonTwo.addEventListener("click", ()=>{
-  if(!inputTwo.value){
-    errorTwo.innerHTML="Enter something...."
-  } else if(isNaN(inputTwo.value)){
-    errorTwo.innerHTML="Enter a number.... "
-  } else if(inputTwo.value<1 || inputTwo.value>10){
-    errorTwo.innerHTML="Enter a number 1 to 10"
-  } else{
-    if(count>1) {
+buttonTwo.addEventListener("click", () => {
+  if (!inputTwo.value) {
+    errorTwo.innerHTML = "Enter something....";
+  } else if (isNaN(inputTwo.value)) {
+    errorTwo.innerHTML = "Enter a number.... ";
+  } else if (inputTwo.value < 0 || inputTwo.value > 10) {
+    errorTwo.innerHTML = "Guess between 0 and 10";
+  } else {
+    if (inputOne.value === inputTwo.value) {
+      playerTwo.innerHTML = "Congratulations! You Won 🏆";
+      buttonTwo.style.display = "none";
+      chance.style.display = "none";
+    } else {
       count--;
       chance.innerHTML = `Chance ${count}`;
-      if(inputOne.value==inputTwo.value){
-        playerTwo.innerHTML="Player Two is Won !!!"
-        buttonTwo.style.display="none"
+      if (count === 0) {
+        playerTwo.innerHTML = "Game Over 💀 !!!";
+        buttonTwo.style.display = "none";
+      } else {
+        errorTwo.innerHTML = "Wrong Guess! Try Again.";
       }
-    } else{
-      count = 0;
-      chance.innerHTML = `Chance ${count}`;
-      playerTwo.innerHTML="Player One is Won !!!"
-      buttonTwo.style.display="none"
     }
   }
-})
+});
 
-buttonTwo.addEventListener("click", ()=>{
+buttonTwo.addEventListener("click", () => {
   inputTwo.value= "";
-})
-buttonOne.addEventListener("click", ()=>{
-  inputOne.value= "";
-})
+});
+// buttonOne.addEventListener("click", () => {
+//   inputOne.innerText= "";
+// });
